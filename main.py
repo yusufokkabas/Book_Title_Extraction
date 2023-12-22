@@ -120,7 +120,7 @@ def non_max_suppression(boxes, probs=None, overlapThresh=0.3):
 net = cv2.dnn.readNet('frozen_east_text_detection.pb')
 
 # Load the image
-image = cv2.imread('savas.jpeg')
+image = cv2.imread('cover.jpg')
 
 # Rescale the image
 image = cv2.resize(image, None, fx=1.2, fy=1.2, interpolation=cv2.INTER_CUBIC)
