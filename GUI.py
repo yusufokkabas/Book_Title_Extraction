@@ -18,7 +18,6 @@ def load_image_command():
 
         # Inform the user about the operation
         messagebox.showinfo("Info", "Image loaded successfully!")
-        language_combobox.pack(pady=25)
     else:
         messagebox.showinfo("Info", "You closed the file dialog without choosing an image!\n\nDon't forget to choose an image before trying extraction.")
 
@@ -45,7 +44,7 @@ def extract_title_command():
         info_frame.pack(padx=20, pady=20)
 
         # Display the info  label
-        info_label = tk.Label(info_frame, text="📖 Possible Title of Book 📖", font=('Arial', 16, 'bold'))
+        info_label = tk.Label(info_frame, text="📖 Possible Cover Text of Book 📖", font=('Arial', 16, 'bold'))
         info_label.pack()
 
         # Frame to contain information message
@@ -104,7 +103,7 @@ root.title("Book Title Extraction")
 
 # Set the window size (width x height)
 window_width = 500
-window_height = 400
+window_height = 500
 root.geometry(f"{window_width}x{window_height}")
 
 # *** PLACE THE ROOT WINDOW ON THE CENTER OF SCREEN ***
@@ -138,6 +137,7 @@ language_codes = {"English": "en", "Turkish": "tr"}
 # Define buttons and assign functions to these buttons
 load_button = tk.Button(button_frame, text="Load Image of Book Cover", command=load_image_command)
 extract_button = tk.Button(button_frame, text="Extract Title", command=extract_title_command)
+language_label = tk.Label(button_frame, text="Select Language:")
 language_combobox = ttk.Combobox(button_frame, values=list(language_codes.keys()), state="readonly")
 about_us_button = tk.Button(button_frame, text="About Us", command=about_us_command)
 # Define a function to be called when a selection is made
@@ -155,5 +155,7 @@ language_combobox.bind("<<ComboboxSelected>>", combobox_selected)
 load_button.pack(pady=25)
 extract_button.pack(pady=25)
 about_us_button.pack(pady=25)
+language_label.pack(pady=25)
+language_combobox.pack(pady=25)
 
 root.mainloop()
