@@ -5,9 +5,6 @@ import numpy as np
 
 # read image
 def textDetection(img,lang_code):
-    # image_path = 'suc.jpeg'
-    
-    # img = cv2.imread(input_img)
     
     # instance text detector
     reader = easyocr.Reader([lang_code], gpu=True)
@@ -32,5 +29,5 @@ def textDetection(img,lang_code):
     print(fullText)
     plt.imshow(img)
     plt.show()
-    cv2.imwrite('output.png', img)
+    cv2.imwrite('/public/output.png', img)
     return fullText
